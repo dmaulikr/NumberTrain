@@ -15,6 +15,7 @@
 		3FD186D31C32D680002B5C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD186D11C32D680002B5C79 /* LaunchScreen.storyboard */; };
 		3FD186DD1C32E045002B5C79 /* GameValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD186DC1C32E045002B5C79 /* GameValue.m */; settings = {ASSET_TAGS = (); }; };
 		3FD186E01C32E6C9002B5C79 /* GameArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD186DF1C32E6C9002B5C79 /* GameArray.m */; settings = {ASSET_TAGS = (); }; };
+		3FD186E31C353E1B002B5C79 /* NumberBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD186E21C353E1B002B5C79 /* NumberBag.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		3FD186DC1C32E045002B5C79 /* GameValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameValue.m; sourceTree = "<group>"; };
 		3FD186DE1C32E6C9002B5C79 /* GameArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameArray.h; sourceTree = "<group>"; };
 		3FD186DF1C32E6C9002B5C79 /* GameArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameArray.m; sourceTree = "<group>"; };
+		3FD186E11C353E1B002B5C79 /* NumberBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberBag.h; sourceTree = "<group>"; };
+		3FD186E21C353E1B002B5C79 /* NumberBag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberBag.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				3FD186DC1C32E045002B5C79 /* GameValue.m */,
 				3FD186DE1C32E6C9002B5C79 /* GameArray.h */,
 				3FD186DF1C32E6C9002B5C79 /* GameArray.m */,
+				3FD186E11C353E1B002B5C79 /* NumberBag.h */,
+				3FD186E21C353E1B002B5C79 /* NumberBag.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				3FD186DD1C32E045002B5C79 /* GameValue.m in Sources */,
 				3FD186C81C32D680002B5C79 /* AppDelegate.m in Sources */,
 				3FD186C51C32D680002B5C79 /* main.m in Sources */,
+				3FD186E31C353E1B002B5C79 /* NumberBag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

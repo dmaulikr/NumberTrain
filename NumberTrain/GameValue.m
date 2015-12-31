@@ -10,8 +10,8 @@
 
 @interface GameValue ()
 
-@property (nonatomic, readwrite) GameValueType ValueType;
-@property (nonatomic, readwrite) NSInteger NumericalValue;
+@property (nonatomic, readwrite) GameValueType valueType;
+@property (nonatomic, readwrite) NSInteger numericalValue;
 
 @end
 
@@ -27,8 +27,8 @@ static NSMutableDictionary<NSNumber*, GameValue*>* numericalValuesDict = nil;
     
     if (self)
     {
-        self.NumericalValue = -1;
-        self.ValueType = Undefined;
+        self.numericalValue = -1;
+        self.valueType = Undefined;
     }
     return self;
 }
@@ -39,8 +39,8 @@ static NSMutableDictionary<NSNumber*, GameValue*>* numericalValuesDict = nil;
     
     if (self)
     {
-        self.NumericalValue = numericalValue;
-        self.ValueType = Numerical;
+        self.numericalValue = numericalValue;
+        self.valueType = Numerical;
     }
     return self;
 }
@@ -51,7 +51,7 @@ static NSMutableDictionary<NSNumber*, GameValue*>* numericalValuesDict = nil;
     
     if (self)
     {
-        self.ValueType = Empty;
+        self.valueType = Empty;
     }
     return self;
 }
@@ -62,7 +62,7 @@ static NSMutableDictionary<NSNumber*, GameValue*>* numericalValuesDict = nil;
     
     if (self)
     {
-        self.ValueType = Joker;
+        self.valueType = Joker;
     }
     return self;
 }
@@ -109,7 +109,24 @@ static NSMutableDictionary<NSNumber*, GameValue*>* numericalValuesDict = nil;
 
 -(NSInteger)getNumericalValue
 {
-    return self.NumericalValue;
+    return self.numericalValue;
+}
+
+-(NSString*)description
+{
+    switch (self.valueType) {
+        case Numerical:
+            return [NSString stringWithFormat:@"%ld", (long)self.numericalValue];
+            
+        case Empty:
+            return @"Empty";
+            
+        case Joker:
+            return @"Joker";
+            
+        default:
+            return @"Undefined";
+    }
 }
 
 @end

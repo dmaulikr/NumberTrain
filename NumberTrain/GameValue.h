@@ -24,8 +24,10 @@ typedef NS_ENUM(NSInteger, GameValueType)
 
 +(GameValue*)valueAsJoker;
 
-@property (nonatomic, readonly) GameValueType ValueType;
+@property (nonatomic, readonly) GameValueType valueType;
 
 -(NSInteger)getNumericalValue;
+
+-(NSString*)description;
 
 @end
