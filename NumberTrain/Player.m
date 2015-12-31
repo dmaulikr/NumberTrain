@@ -8,8 +8,9 @@
 
 #import "Player.h"
 #import "GameArray.h"
+#import "Game.h"
 
-@interface Player ()
+@interface Player () <GameObserver>
 
 @property (nonatomic) NSMutableArray* observers;
 -(void)notifyObserversAboutChangedValue:(GameValue*)value AtIndex:(NSInteger)index;
@@ -65,7 +66,7 @@
     [self notifyObserversAboutChangedValue:value AtIndex:index];
 }
 
--(void)notifyAboutNextValue:(GameValue *)value
+-(void)Game:(Game *)game DidGetNextValue:(GameValue *)value
 {
     [self notifyObserversAboutNextValue:value];
 }

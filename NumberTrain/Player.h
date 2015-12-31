@@ -28,9 +28,6 @@
 -(GameValue*)getValueAtIndex:(NSInteger)index;
 -(void)setValue:(GameValue*)value atIndex:(NSInteger)index;
 
-// TODO use some kind of observer - NumberBagObserver for example
--(void)notifyAboutNextValue:(GameValue*)value;
-
 -(void)addObserver:(NSObject<PlayerObserver>*)observer;
 -(void)removeObserver:(NSObject<PlayerObserver>*)observer;
 
