@@ -19,6 +19,15 @@ static NSInteger const DefaultSize = 20;
 
 @implementation GameArray
 
+-(instancetype)initWithDefaultSize
+{
+    self = [super init];
+    if (self) {
+        self.size = DefaultSize;
+    }
+    return self;
+}
+
 -(instancetype)initWithSize:(NSInteger)size
 {
     self = [super init];
@@ -39,7 +48,7 @@ static NSInteger const DefaultSize = 20;
     return _array;
 }
 
--(void)insertValue:(GameValue *)value AtIndex:(NSInteger)index
+-(void)setValue:(GameValue *)value AtIndex:(NSInteger)index
 {
     if (index < 0 || index >= self.size)
         return;
@@ -59,7 +68,7 @@ static NSInteger const DefaultSize = 20;
     if (index < 0 || index >= self.size)
         return nil;
     
-    if (index >= self.array.count)
+    if (!_array || index >= self.array.count)
         return [GameValue valueAsEmpty];
     
     return [self.array objectAtIndex:index];

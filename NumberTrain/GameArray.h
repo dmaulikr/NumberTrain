@@ -11,11 +11,12 @@
 
 @interface GameArray : NSObject
 
+-(instancetype)initWithDefaultSize;
 -(instancetype)initWithSize:(NSInteger)size;
 
 @property (nonatomic, readonly) NSInteger size;
 
--(void)insertValue:(GameValue*)value AtIndex:(NSInteger)index;
+-(void)setValue:(GameValue*)value AtIndex:(NSInteger)index;
 
 -(GameValue*)getValueAtIndex:(NSInteger)index;
 
