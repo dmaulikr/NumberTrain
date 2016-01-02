@@ -19,6 +19,7 @@
 		3FD186E61C35624A002B5C79 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD186E51C35624A002B5C79 /* Player.m */; settings = {ASSET_TAGS = (); }; };
 		3FD186E91C357349002B5C79 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD186E81C357349002B5C79 /* Game.m */; settings = {ASSET_TAGS = (); }; };
 		3FD186ED1C358F60002B5C79 /* GameArrayCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD186EC1C358F60002B5C79 /* GameArrayCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3FF345DC1C36D4EA00043D02 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF345DB1C36D4EA00043D02 /* appicon.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3FD186E81C357349002B5C79 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		3FD186EB1C358F60002B5C79 /* GameArrayCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameArrayCollectionViewController.h; sourceTree = "<group>"; };
 		3FD186EC1C358F60002B5C79 /* GameArrayCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameArrayCollectionViewController.m; sourceTree = "<group>"; };
+		3FF345DB1C36D4EA00043D02 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		3FD186C31C32D680002B5C79 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FF345DB1C36D4EA00043D02 /* appicon.png */,
 				3FD186C41C32D680002B5C79 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -185,6 +188,7 @@
 			files = (
 				3FD186D31C32D680002B5C79 /* LaunchScreen.storyboard in Resources */,
 				3FD186D01C32D680002B5C79 /* Assets.xcassets in Resources */,
+				3FF345DC1C36D4EA00043D02 /* appicon.png in Resources */,
 				3FD186CE1C32D680002B5C79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +355,7 @@
 				3FD186D91C32D680002B5C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

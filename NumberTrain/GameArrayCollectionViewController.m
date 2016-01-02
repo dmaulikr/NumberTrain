@@ -7,13 +7,42 @@
 //
 
 #import "GameArrayCollectionViewController.h"
+#import "Player.h"
+#import "GameValue.h"
+
+@interface GameArrayCollectionViewController () <PlayerObserver>
+
+@property (nonatomic, readwrite, strong) GameValue* currentValue;
+
+@end
 
 @implementation GameArrayCollectionViewController
+
+-(void)Player:(Player *)player DidChangeValue:(GameValue *)value AtIndex:(NSInteger)index
+{
+    NSIndexPath* indexPath =[NSIndexPath indexPathForItem:index inSection:0];
+    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+}
+
+-(void)Player:(Player *)player DidReceiveNextValue:(GameValue *)value
+{
+    self.currentValue = value;
+}
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (!self.currentValue) return;
     
+    if ([self.player getValueAtIndex:indexPath.item].valueType != Empty) return;
+    
+    GameValue* valueToSend = self.currentValue;
+    self.currentValue = nil;
+    [self.player setValue:valueToSend atIndex:indexPath.item];
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -28,7 +57,15 @@
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
-    label.text = @"4";
+    
+    if (self.player)
+    {
+        label.text = [[self.player getValueAtIndex:indexPath.item]displayText];
+    }
+    else
+    {
+        label.text = @"";
+    }
     
     return cell;
 }

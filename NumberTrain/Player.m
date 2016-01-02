@@ -17,6 +17,7 @@
 -(void)notifyObserversAboutNextValue:(GameValue*)value;
 
 @property (nonatomic, readwrite) GameArray* gameArray;
+@property (nonatomic, readwrite) Game* game;
 
 @end
 
@@ -64,11 +65,14 @@
 {
     [self.gameArray setValue:value AtIndex:index];
     [self notifyObserversAboutChangedValue:value AtIndex:index];
+    [self.game valuePlacedByPlayer:self];
 }
 
 -(void)Game:(Game *)game DidGetNextValue:(GameValue *)value
 {
     [self notifyObserversAboutNextValue:value];
+    self.game = game;
+    // TODO: besser machen
 }
 
 -(void)addObserver:(NSObject<PlayerObserver> *)observer

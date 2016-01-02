@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Player.h"
 
 @interface GameArrayCollectionViewController : UICollectionViewController
+
+@property (nonatomic, readwrite) Player* player;
 
 @end

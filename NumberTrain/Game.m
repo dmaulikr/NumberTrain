@@ -69,10 +69,20 @@
 
 -(void)checkWhetherAllPlayersHaveAnswered
 {
-    if (self.answeredPlayers.count == self.observers.count) {
+    // minus 1 because viewcontroller is an observer too
+    if (self.answeredPlayers.count == self.observers.count - 1) {
         [self nextValue];
     }
 }
+
+-(NSMutableArray*)observers
+{
+    if (!_observers) {
+        _observers = [[NSMutableArray alloc] init];
+    }
+    return _observers;
+}
+
 
 -(void)addObserver:(NSObject<GameObserver> *)observer
 {

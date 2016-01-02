@@ -30,4 +30,6 @@ typedef NS_ENUM(NSInteger, GameValueType)
 
 -(NSString*)description;
 
+-(NSString*)displayText;
+
 @end

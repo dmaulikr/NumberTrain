@@ -129,4 +129,21 @@ static NSMutableDictionary<NSNumber*, GameValue*>* numericalValuesDict = nil;
     }
 }
 
+-(NSString*)displayText
+{
+    switch (self.valueType) {
+        case Numerical:
+            return [NSString stringWithFormat:@"%ld", (long)self.numericalValue];
+            
+        case Empty:
+            return @"";
+            
+        case Joker:
+            return @"*";
+            
+        default:
+            return @"/";
+    }
+}
+
 @end
