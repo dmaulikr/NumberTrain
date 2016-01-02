@@ -15,6 +15,7 @@
 @property (nonatomic) NSMutableArray* observers;
 -(void)notifyObserversAboutChangedValue:(GameValue*)value AtIndex:(NSInteger)index;
 -(void)notifyObserversAboutNextValue:(GameValue*)value;
+-(void)notifyObserversAboutScore;
 
 @property (nonatomic, readwrite) GameArray* gameArray;
 @property (nonatomic, readwrite) Game* game;
@@ -65,6 +66,7 @@
 {
     [self.gameArray setValue:value AtIndex:index];
     [self notifyObserversAboutChangedValue:value AtIndex:index];
+    [self notifyObserversAboutScore];
     [self.game valuePlacedByPlayer:self];
 }
 
@@ -100,6 +102,14 @@
     if (!_observers) return;
     for (NSObject<PlayerObserver>* observer in self.observers) {
         [observer Player:self DidChangeValue:value AtIndex:index];
+    }
+}
+
+-(void)notifyObserversAboutScore
+{
+    if (!_observers) return;
+    for (NSObject<PlayerObserver>* observer in self.observers) {
+        [observer Player:self DidFinishWithScore:[self.gameArray calculateScore]];
     }
 }
 

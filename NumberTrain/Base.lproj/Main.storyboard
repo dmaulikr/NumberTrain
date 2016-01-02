@@ -17,8 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwO-cL-vTj">
-                                <rect key="frame" x="130" y="269" width="61" height="30"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQL-pz-iey">
+                                <rect key="frame" x="16" y="406" width="288" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="Xea-l1-EC5"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="25Y-ew-rJe" kind="embed" identifier="player1" id="CPD-xJ-hqI"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwO-cL-vTj">
+                                <rect key="frame" x="154" y="269" width="13" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -35,24 +44,31 @@
                                     <segue destination="25Y-ew-rJe" kind="embed" identifier="player2" id="Az5-KR-Gaa"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQL-pz-iey">
-                                <rect key="frame" x="16" y="406" width="288" height="142"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="Xea-l1-EC5"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="25Y-ew-rJe" kind="embed" identifier="player1" id="CPD-xJ-hqI"/>
-                                </connections>
-                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scorelabel1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jq-n0-X4w">
+                                <rect key="frame" x="117" y="377" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scorelabel2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjT-QZ-Wo0">
+                                <rect key="frame" x="116" y="190" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mwO-cL-vTj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5iF-0L-v26"/>
+                            <constraint firstItem="9Jq-n0-X4w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HUr-eM-0L7"/>
                             <constraint firstItem="BHe-MO-jfy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KjW-AI-JYu"/>
                             <constraint firstItem="gQL-pz-iey" firstAttribute="height" secondItem="BHe-MO-jfy" secondAttribute="height" id="Wht-vT-IYq"/>
+                            <constraint firstItem="BjT-QZ-Wo0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YbA-wV-abw"/>
                             <constraint firstItem="gQL-pz-iey" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cC5-1A-Wtf"/>
+                            <constraint firstItem="BjT-QZ-Wo0" firstAttribute="top" secondItem="BHe-MO-jfy" secondAttribute="bottom" constant="8" id="guh-Sy-fW5"/>
                             <constraint firstItem="6We-JQ-aed" firstAttribute="top" secondItem="gQL-pz-iey" secondAttribute="bottom" constant="20" id="iOp-Zt-RUO"/>
                             <constraint firstItem="mwO-cL-vTj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kA0-Nn-du7"/>
+                            <constraint firstItem="gQL-pz-iey" firstAttribute="top" secondItem="9Jq-n0-X4w" secondAttribute="bottom" constant="8" id="m0c-nD-v6b"/>
                             <constraint firstItem="BHe-MO-jfy" firstAttribute="top" secondItem="Un0-Qv-9qo" secondAttribute="bottom" constant="20" id="mRq-tD-kD4"/>
                             <constraint firstItem="bAk-62-hYL" firstAttribute="centerX" secondItem="mwO-cL-vTj" secondAttribute="centerX" id="pl4-ax-NTR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BHe-MO-jfy" secondAttribute="trailing" id="qPi-iQ-elf"/>
@@ -62,6 +78,8 @@
                     </view>
                     <connections>
                         <outlet property="currentValueLabel" destination="mwO-cL-vTj" id="C2J-Pm-cLE"/>
+                        <outlet property="scoreLabel1" destination="9Jq-n0-X4w" id="Kww-Bl-Rmr"/>
+                        <outlet property="scoreLabel2" destination="BjT-QZ-Wo0" id="5jO-Gh-aEv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

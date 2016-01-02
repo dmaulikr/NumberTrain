@@ -7,12 +7,14 @@
 //
 
 #import "GameArrayCollectionViewController.h"
+#import "ViewController.h"
 #import "Player.h"
 #import "GameValue.h"
 
 @interface GameArrayCollectionViewController () <PlayerObserver>
 
 @property (nonatomic, readwrite, strong) GameValue* currentValue;
+
 
 @end
 
@@ -29,9 +31,16 @@
     self.currentValue = value;
 }
 
+-(void)Player:(Player *)player DidFinishWithScore:(NSInteger)score
+{
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.scoreLabel.text = @"Score: ";
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

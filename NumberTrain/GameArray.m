@@ -74,4 +74,82 @@ static NSInteger const DefaultSize = 20;
     return [self.array objectAtIndex:index];
 }
 
+-(NSInteger)calculateScore
+{
+    static NSArray<NSNumber*>* scores = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        scores = @[
+                   @0, // 0
+                   @0,
+                   @0,
+                   @1,
+                   @2,
+                   @4, // 5
+                   @6,
+                   @8,
+                   @10,
+                   @12,
+                   @14, // 10
+                   @17,
+                   @20,
+                   @23,
+                   @27,
+                   @31, // 15
+                   @35,
+                   @39,
+                   @44,
+                   @49,
+                   @56  // 20
+                   ];
+    });
+    
+    int score = 0;
+    int streak = 0;
+    GameValue* lastValue = [GameValue valueAsEmpty];
+    GameValue* lastValueBeforeJoker = [GameValue valueAsEmpty];
+    
+    for (GameValue* value in self.array)
+    {
+        if (value.valueType == Empty || value.valueType == Undefined) return -1;
+        
+        switch (value.valueType) {
+            case Numerical:
+                if ((lastValue.valueType == Joker
+                        && [value getNumericalValue] >= [lastValueBeforeJoker getNumericalValue])
+                    || (lastValue.valueType == Numerical
+                        && [value getNumericalValue] >= [lastValue getNumericalValue]))
+                {
+                    ++streak;
+                }
+                else
+                {
+                    score += scores[streak].integerValue;
+                    streak = 1;
+                }
+                break;
+                
+            case Joker:
+                // ToDo: for ambigous joker placements calculate the streak in favor of the player
+                // eg. 123*2457 would seperate it like 123|*2457 instead of 123*|2457
+                ++streak;
+                if (lastValue.valueType != Joker)
+                    lastValueBeforeJoker = lastValue;
+                break;
+                
+            case Undefined:
+            default:
+                return -1;
+        }
+        
+        lastValue = value;
+    }
+    
+    score += scores[streak].integerValue;
+ 
+    return score;
+}
+
+
+
 @end

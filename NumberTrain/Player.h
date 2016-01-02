@@ -15,6 +15,7 @@
 
 -(void)Player:(Player*)player DidChangeValue:(GameValue*)value AtIndex:(NSInteger)index;
 -(void)Player:(Player*)player DidReceiveNextValue:(GameValue*)value;
+-(void)Player:(Player*)player DidFinishWithScore:(NSInteger)score;
 
 @end
 

@@ -28,8 +28,6 @@
     self.game = [[Game alloc] initWithDefaultNumberBagAndSize];
     [self.game addObserver:self];
     
-    
-    
     Player* player1 = [[Player alloc]initWithSize:self.game.arraySize];
     [self.game addObserver:player1];
     [player1 addObserver:self.player1];
@@ -50,9 +48,11 @@
     NSString* segueName = segue.identifier;
     if ([segueName isEqualToString: @"player1"]) {
         self.player1  = (GameArrayCollectionViewController*) [segue destinationViewController];
+        self.player1.scoreLabel = self.scoreLabel1;
     }
     else if ([segueName isEqualToString: @"player2"]) {
         self.player2  = (GameArrayCollectionViewController*) [segue destinationViewController];
+        self.player2.scoreLabel = self.scoreLabel2;
     }
 
 }

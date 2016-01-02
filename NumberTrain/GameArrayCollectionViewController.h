@@ -12,5 +12,6 @@
 @interface GameArrayCollectionViewController : UICollectionViewController
 
 @property (nonatomic, readwrite) Player* player;
+@property (nonatomic, readwrite) UILabel *scoreLabel;
 
 @end

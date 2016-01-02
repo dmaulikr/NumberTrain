@@ -20,4 +20,6 @@
 
 -(GameValue*)getValueAtIndex:(NSInteger)index;
 
+-(NSInteger)calculateScore;
+
 @end

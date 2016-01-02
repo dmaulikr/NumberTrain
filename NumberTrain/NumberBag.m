@@ -25,11 +25,11 @@
         [defaultValues addObject:[GameValue valueFromNumericalValue:i]];
     }
     
-    for (NSInteger i = 11; i<=19; ++i) {
+    for (NSInteger i = 10; i<=19; ++i) {
         [defaultValues addObject:[GameValue valueFromNumericalValue:i]];
     }
     
-    for (NSInteger i = 0; i<5; ++i) {
+    for (NSInteger i = 0; i<3; ++i) {
         [defaultValues addObject:[GameValue valueAsJoker]];
     }
     

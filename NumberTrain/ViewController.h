@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
 
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel2;
 
 @end
 
